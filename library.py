@@ -17,6 +17,13 @@ def home():
     connection.close()
     return render_template('books.html', books=books)
 
+@app.route('/authors')
+def authors_database():
+    connection = get_db_connection()
+    authors = connection.execute('SELECT *FROM Author').fetchall()
+    connection.close()
+    return render_template('authors.html', authors=authors)
+
 
 @app.route('/addbook', methods=("GET","POST"))
 def add_book():

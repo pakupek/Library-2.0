@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+
+
+    <h1 style="text-align: center;">{% block title %} Authors database {% endblock %}</h1>
+    <br>
+    <table class="author_table">
+        <tr>
+            <th>Author name</th>
+            <th>Born date</th>
+            <th>Bibliography</th>
+        </tr>
+        {% for authors in authors %}
+            <tr>
+                <td>{{ authors['first_last_name'] }}</td>
+                <td>{{ authors['born_date'] }}</td>
+                <td>{{ authors['bibliography'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}
