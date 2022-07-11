@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <h1 style="text-align: center;">{% block title %} Loans database {% endblock %}</h1>
+    <br>
+    <table class="author_table">
+        <tr>
+            <th>Book name</th>
+            <th>Type</th>
+            <th>Author</th>
+            <th>Start date</th>
+            <th>End date</th>
+        </tr>
+        {% for loans in loans %}
+            <tr>
+                <td>{{ loans['book'] }}</td>
+                <td>{{ loans['book_type'] }}</td>
+                <td>{{ loans['author'] }}</td>
+                <td>{{ loans['loan_start'] }}</td>
+                <td>{{ loans['loan_end'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+
+{% endblock %}

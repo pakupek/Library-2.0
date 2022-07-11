@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1 style="text-align: center;">{% block title %} Add a New Book Loan {% endblock %}</h1>
+    <br>
+    <form method="post" style="text-align: center;">
+        <label for="title">Title</label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Title"></input>
+        <br>
+        <label for="type">Book type</label>
+        <br>
+        <input type="text" name="type"
+                placeholder="Type"></input>
+        <br>
+        <label for="author">Author</label>
+        <br>
+        <input type="text" name="author"
+                placeholder="Author"></input>
+        <br>
+        <label for="loan start">Loan start</label>
+        <br>
+        <input type="text" name="loan_start"
+                placeholder="Loan Start"></input>
+        <br>
+        <label for="loan end">Loan end</label>
+        <br>
+        <input type="text" name="loan_end"
+                placeholder="Loan End"></input>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}

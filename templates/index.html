@@ -73,9 +73,11 @@
             <div class="logo">
                 <img src= "logo_ca_szary.png" alt="">
             </div>
-            <li><a href="#web">Available books</a></li>
+            <li><a href="{{ url_for('home') }}">Available books</a></li>
             <li><a href="{{ url_for('add_book') }}">Add a book</a></li>
             <li><a href="{{ url_for('authors_database') }}">Authors database</a></li>
+            <li><a href="{{ url_for('loans') }}">Loans</a></li>
+            <li><a href="{{ url_for('add_loan') }}">Add loan</a></li>
         </ul>
  
         <div class="rightNav">
