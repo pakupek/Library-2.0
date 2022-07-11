@@ -1,14 +1,43 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h1>{% block title %} Books {% endblock %}</h1>
-    {% for books in books %}
-        <div class='book'>
-            <h2>{{ books['title'] }}</h2>
-            <p>{{ books['type'] }}</p>
-            <p>{{ books['prod_year'] }}</p>
-            <p>{{ books['author'] }}</p>
-            <p>{{ books['descrip'] }}</p>
-        </div>
-    {% endfor %}
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td, th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+    </style>
+    <h1 style="text-align: center;">{% block title %} Books database {% endblock %}</h1>
+    <br>
+    <table class="books_table">
+        <tr>
+            <th style="text-align: center;">Book name</th>
+            <th style="text-align: center;">Type</th>
+            <th style="text-align: center;">Production year</th>
+            <th style="text-align: center;">Author</th>
+            <th style="text-align: center;">Status</th>
+            <th style="text-align: center;">Description</th>
+        </tr>
+        {% for books in books %}
+            <tr>
+                <td>{{ books['title'] }}</td>
+                <td>{{ books['book_type'] }}</td>
+                <td>{{ books['prod_year'] }}</td>
+                <td>{{ books['author'] }}</td>
+                <td>{{ books['status'] }}</td>
+                <td>{{ books['descrip'] }}</td>
+            </tr>
+        {% endfor %}
+    </table>
 {% endblock %}
