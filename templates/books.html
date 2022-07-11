@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>{% block title %} Books {% endblock %}</h1>
+    {% for books in books %}
+        <div class='book'>
+            <h2>{{ books['title'] }}</h2>
+            <p>{{ books['type'] }}</p>
+            <p>{{ books['prod_year'] }}</p>
+            <p>{{ books['author'] }}</p>
+            <p>{{ books['descrip'] }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
